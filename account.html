@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile</title>
+    <link rel="stylesheet" href="account.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h1 class="logo">SulyRate</h1>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="account.html">Account</a></li>
+            <li><a href="about.html">About Us</a></li>
+        </ul>
+    </nav>
+
+    <div class="profile-container">
+        <h1>User Profile</h1>
+        <div class="tabs">
+            <button class="tablinks active" onclick="openTab(event, 'Profile')">Profile</button>
+            <button class="tablinks" onclick="openTab(event, 'Ratings')">My Ratings</button>
+        </div>
+
+        <!-- Profile Section -->
+        <div id="Profile" class="tabcontent" style="display: block;">
+            <div class="profile-info">
+                <label>Username:</label>
+                <input type="text" id="username" disabled>
+                <label>Email:</label>
+                <input type="email" id="email">
+                <label>Password:</label>
+                <button onclick="showChangePassword()">Change Password</button>
+                <div id="changePasswordSection" style="display: none;">
+                    <label>Current Password:</label>
+                    <input type="password" id="currentPassword" placeholder="Current Password">
+                    <br><label>New Password:</label> 
+                    <input type="password" id="newPassword" placeholder="New Password">
+                    <button onclick="saveNewPassword()">Save New Password</button>
+                </div>
+                <button onclick="saveProfile()">Save Profile</button>
+            </div>
+        </div>
+
+        <!-- Ratings Section -->
+        <div id="Ratings" class="tabcontent">
+            <h2>My Ratings</h2>
+            <ul class="ratings-list">
+                <li>
+                    <h3>City Star</h3>
+                    <p>Rating: ★★★★☆</p>
+                    <p>Review: Great place with lots of fun activities. Loved the game zone and bakery.</p>
+                </li>
+                <li>
+                    <h3>Grand Millennium</h3>
+                    <p>Rating: ★★★★★</p>
+                    <p>Review: Luxurious hotel with excellent service. The rooms were clean and spacious.</p>
+                </li>
+                <li>
+                    <h3>De Fermo</h3>
+                    <p>Rating: ★★★☆☆</p>
+                    <p>Review: Amazing Turkish ambiance but the food was just okay.</p>
+                </li>
+                <li>
+                    <h3>Shahrazad Cafe</h3>
+                    <p>Rating: ★★★★☆</p>
+                    <p>Review: Cozy cafe with great coffee and desserts. A perfect spot to relax.</p>
+                </li>
+            </ul>
+        </div>
+    </div>
+
+    <script>
+        function openTab(evt, tabName) {
+            var i, tabcontent, tablinks;
+            tabcontent = document.getElementsByClassName("tabcontent");
+            for (i = 0; i < tabcontent.length; i++) {
+                tabcontent[i].style.display = "none";
+            }
+            tablinks = document.getElementsByClassName("tablinks");
+            for (i = 0; i < tablinks.length; i++) {
+                tablinks[i].className = tablinks[i].className.replace(" active", "");
+            }
+            document.getElementById(tabName).style.display = "block";
+            evt.currentTarget.className += " active";
+        }
+
+        function loadProfile() {
+            const account = JSON.parse(localStorage.getItem('account'));
+            document.getElementById('username').value = account.username;
+            document.getElementById('email').value = account.email;
+        }
+
+        function saveProfile() {
+            const account = JSON.parse(localStorage.getItem('account'));
+            account.email = document.getElementById('email').value;
+            localStorage.setItem('account', JSON.stringify(account));
+            localStorage.setItem(account.username, JSON.stringify(account));
+            alert('Profile updated successfully!');
+        }
+
+        function showChangePassword() {
+            document.getElementById('changePasswordSection').style.display = 'block';
+        }
+
+        function saveNewPassword() {
+            const currentPassword = document.getElementById('currentPassword').value;
+            const newPassword = document.getElementById('newPassword').value;
+            const account = JSON.parse(localStorage.getItem('account'));
+
+            if (account.password === currentPassword) {
+                account.password = newPassword;
+                localStorage.setItem('account', JSON.stringify(account));
+                localStorage.setItem(account.username, JSON.stringify(account));
+                alert('Password changed successfully!');
+            } else {
+                alert('Current password is incorrect.');
+            }
+        }
+
+        window.onload = function() {
+            loadProfile();
+        };
+    </script>
+</body>
+</html>

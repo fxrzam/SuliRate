@@ -1,0 +1,164 @@
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: cursive; /* Matching main tab font */
+    background-color: #f4f4f4;
+}
+
+.navbar {
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+.profile-container {
+    width: 90%;
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #333; /* Dark background */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    text-align: center;
+    color: white; /* White text */
+}
+
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #6A0DAD; /* Vibrant purple background */
+    padding: 20px;
+    border-radius: 8px;
+}
+
+.profile-info label {
+    margin-top: 20px;
+    color: white; /* White text for labels */
+    font-weight: bold;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 80%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+    font-family: cursive; /* Matching main tab font */
+    background-color: white; /* White background for input fields */
+    color: black; /* Black text for input fields */
+}
+
+button {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: var(--color2); /* Using color2 from main tab */
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: cursive; /* Matching main tab font */
+}
+
+button:hover {
+    background-color: var(--color3); /* Using color3 from main tab */
+}
+
+h1 {
+    color: white; /* White text for heading */
+    font-weight: bold;
+}
+
+h2 {
+    color: var(--color2); /* Using color2 from main tab */
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.tabs {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+.tablinks {
+    background-color: var(--color3); /* Using color3 from main tab */
+    color: white;
+    padding: 14px 20px;
+    margin: 0 4px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-family: cursive; /* Matching main tab font */
+}
+
+.tablinks.active {
+    background-color: var(--color4); /* Using color4 from main tab */
+    color: white;
+}
+
+.tablinks:hover {
+    background-color: var(--color2); /* Using color2 from main tab */
+    color: white;
+}
+
+.tabcontent {
+    display: none;
+    padding: 20px;
+    border-top: 1px solid #ccc;
+    margin-top: 20px;
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    border-radius: 8px;
+}
+
+.ratings-list {
+    list-style-type: none;
+    padding: 0;
+    color: white; /* White text */
+}
+
+.ratings-list li {
+    padding: 10px;
+    border-bottom: 1px solid #ccc;
+}
+
+.ratings-list h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.ratings-list p {
+    margin: 5px 0;
+}

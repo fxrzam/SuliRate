@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comments</title>
+    <link rel="stylesheet" href="comments.css">
+</head>
+<body>
+    <div class="comments-container">
+        <h1>Comments on Rotana Hotel</h1>
+        <div id="comments-list" class="comments-list">
+            <p>Meer: Absolutely love this place! Highly recommend.</p>
+            <p>Farzam: Had a great time, will visit again soon.</p>
+            <!-- Additional comments can go here -->
+        </div>
+        <h3>Add Your Comment</h3>
+        <form onsubmit="addComment(event)">
+            <textarea id="comment-input" required placeholder="Your comment here..."></textarea>
+            <button type="submit">Post Comment</button>
+        </form>
+    </div>
+    <script>
+        function addComment(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+            var commentInput = document.getElementById('comment-input');
+            var newComment = commentInput.value.trim();
+            if(newComment) {
+                var commentsList = document.getElementById('comments-list');
+                var newP = document.createElement('p');
+                newP.textContent = "Me: " + newComment; // Replace 'NewUser' with logged-in user if available
+                commentsList.appendChild(newP);
+                commentInput.value = ''; // Clear the input after adding
+            }
+        }
+    </script>
+</body>
+</html>
+

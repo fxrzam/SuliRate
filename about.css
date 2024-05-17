@@ -1,0 +1,80 @@
+/* General styles */
+body, html {
+    height: 100%;
+    margin: 0;
+    font-family: cursive; /* Matching main tab font */
+    background-color: #f4f4f4;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: #333; /* Dark background */
+    color: white; /* White text */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+}
+
+.navbar .logo {
+    font-size: 24px;
+    font-weight: bold;
+
+}
+.navbar .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.navbar .nav-links li {
+    display: inline;
+}
+
+.navbar .nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar .nav-links a:hover {
+    text-decoration: underline;
+}
+
+/* About Us container styles */
+.about-container {
+    width: 90%;
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #333; /* Dark background */
+    box-shadow: 0 0 15px rgba(0,0,0,0.2);
+    border-radius: 8px;
+    color: white; /* White text */
+    text-align: center;
+}
+
+.about-container h1, .about-container h2 {
+    color: #bda90f; /* Vibrant purple heading */
+    margin-bottom: 20px;
+}
+
+.about-container p, .about-container ul {
+    color: white; /* White text */
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+.about-container ul {
+    list-style: disc;
+    padding-left: 20px;
+}
+
+.about-container a {
+    color: #6A0DAD; /* Vibrant purple links */
+    text-decoration: none;
+}
+
+.about-container a:hover {
+    text-decoration: underline;
+}
